@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://ricamarshall63-star.github.io/ai-bio-generator/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Add your google verification file here. Find its exact name in your repo -->
+  <!--
+  <url>
+    <loc>https://ricamarshall63-star.github.io/ai-bio-generator/google1234567890.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.1</priority>
+  </url>
+  -->
+
+</urlset>
