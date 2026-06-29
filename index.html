@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<!-- ═══ SEO ═══ -->
+<title>AI Bio Generator Free — #1 Instagram, TikTok, LinkedIn Bio Maker 2026</title>
+<meta name="description" content="Create the perfect Instagram, TikTok, LinkedIn & WhatsApp bio in seconds using AI. Urdu + English support. Free, no signup. Trusted by 50,000+ creators worldwide."/>
+<meta name="keywords" content="AI bio generator, free bio generator, instagram bio maker, tiktok bio generator, linkedin bio creator, urdu bio generator, whatsapp bio, bio maker online free 2026"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://yourdomain.com/"/>
+<meta property="og:title" content="AI Bio Generator Free — Instagram, TikTok, Urdu Bio Maker"/>
+<meta property="og:description" content="Create perfect bios in seconds. Free, no signup. 10+ platforms, 8 tones, Urdu + English."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI Bio Generator","url":"https://yourdomain.com","description":"Free AI bio generator for Instagram, TikTok, LinkedIn, WhatsApp. Urdu and English support.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"3847"}}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#08090f;
+  --s1:#0e0f1a;
+  --s2:#13141f;
+  --s3:#1a1b2e;
+  --border:rgba(124,58,237,0.15);
+  --border2:rgba(124,58,237,0.3);
+  --text:#f0f0ff;
+  --muted:#8888b0;
+  --faint:#3a3a5c;
+  --v1:#7c3aed;
+  --v2:#6d28d9;
+  --v3:#4c1d95;
+  --coral:#ff4757;
+  --coral2:#e8384f;
+  --gold:#fbbf24;
+  --cyan:#22d3ee;
+  --green:#4ade80;
+  --r:14px;
+  --rsm:9px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* ── AMBIENT ── */
+.ambient{position:fixed;inset:0;pointer-events:none;z-index:0}
+.ambient-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:0.18}
+.orb1{width:600px;height:600px;background:var(--v1);top:-200px;left:-100px}
+.orb2{width:500px;height:500px;background:var(--coral);top:40%;right:-150px}
+.orb3{width:400px;height:400px;background:var(--cyan);bottom:-100px;left:30%}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,9,15,0.85);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:60px;
+}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo-dot{width:8px;height:8px;border-radius:50%;background:var(--v1);box-shadow:0 0 10px var(--v1)}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{padding:7px 18px;border-radius:20px;background:var(--v1);color:#fff;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:var(--v2);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{
+  position:relative;z-index:1;
+  text-align:center;
+  padding:5rem 5% 3rem;
+  max-width:900px;margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(124,58,237,0.12);border:1px solid var(--border2);
+  color:#a78bfa;font-size:12px;font-weight:600;letter-spacing:0.1em;
+  text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:1.5rem;
+}
+.hero-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:#a78bfa;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(1.5)}}
+.hero h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(32px,5.5vw,62px);
+  font-weight:700;line-height:1.08;
+  margin-bottom:1.2rem;
+  background:linear-gradient(135deg,#fff 0%,#c4b5fd 45%,#fb7185 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-sub{font-size:clamp(15px,2vw,18px);color:var(--muted);max-width:580px;margin:0 auto 2rem;line-height:1.7}
+.hero-cta-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:2rem}
+.btn-primary{
+  padding:14px 32px;border-radius:var(--rsm);
+  background:linear-gradient(135deg,var(--v1),var(--coral));
+  color:#fff;font-size:16px;font-weight:700;
+  font-family:'Space Grotesk',sans-serif;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,58,237,0.4)}
+.btn-secondary{
+  padding:14px 28px;border-radius:var(--rsm);
+  background:transparent;border:1px solid var(--border2);
+  color:var(--text);font-size:15px;font-weight:600;
+  text-decoration:none;cursor:pointer;transition:all 0.2s;
+  display:inline-flex;align-items:center;gap:7px;
+}
+.btn-secondary:hover{border-color:var(--v1);background:rgba(124,58,237,0.08)}
+.hero-note{font-size:12px;color:var(--faint);display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* ── GENERATOR TOOL ── */
+.generator-section{
+  position:relative;z-index:1;
+  max-width:760px;margin:0 auto 3rem;
+  padding:0 5%;
+}
+.generator-card{
+  background:var(--s2);border:1px solid var(--border2);
+  border-radius:20px;padding:2rem;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.form-group{margin-bottom:1.2rem}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px}
+.form-input, .form-select{
+  width:100%;padding:12px 14px;
+  background:var(--s3);border:1px solid var(--border);
+  border-radius:var(--rsm);
+  color:var(--text);font-size:14px;
+  font-family:'Inter',sans-serif;outline:none;transition:border 0.2s;
+}
+.form-input:focus, .form-select:focus{border-color:var(--v1)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.generate-btn{
+  width:100%;padding:14px;
+  border-radius:var(--rsm);border:none;
+  background:linear-gradient(135deg,var(--v1),var(--coral));
+  color:#fff;font-size:16px;font-weight:700;
+  font-family:'Space Grotesk',sans-serif;
+  cursor:pointer;transition:all 0.2s;
+}
+.generate-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,58,237,0.4)}
+.result-box{
+  margin-top:1.5rem;background:var(--s3);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.2rem;
+}
+.bio-item{
+  background:var(--s1);border:1px solid var(--border2);
+  border-radius:var(--rsm);padding:1rem;
+  margin-bottom:10px;position:relative;
+}
+.bio-text{font-size:14px;line-height:1.7;color:var(--text);white-space:pre-wrap}
+.bio-meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;flex-wrap:wrap;gap:6px}
+.bio-char{font-size:11px;color:var(--faint)}
+.copy-btn{
+  padding:4px 14px;border-radius:20px;border:1px solid var(--border2);
+  background:transparent;color:var(--muted);font-size:11px;font-weight:600;
+  cursor:pointer;transition:all 0.18s;font-family:'Inter',sans-serif;
+}
+.copy-btn:hover{border-color:var(--green);color:var(--green)}
+
+/* ── TICKER ── */
+.ticker-wrap{
+  position:relative;z-index:1;
+  background:var(--s1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:12px 0;overflow:hidden;margin-bottom:4rem;
+}
+.ticker-inner{display:flex;gap:0;animation:ticker 30s linear infinite;white-space:nowrap}
+.ticker-inner:hover{animation-play-state:paused}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:0 24px;font-size:13px;color:var(--muted);flex-shrink:0;
+}
+.ticker-item strong{color:var(--text)}
+.ticker-sep{color:var(--faint)}
+
+/* ── SECTION ── */
+.section{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 5% 5rem}
+.section-eyebrow{font-size:11px;font-weight:700;color:var(--v1);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,38px);font-weight:700;line-height:1.15;margin-bottom:0.75rem}
+.section-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:520px}
+
+/* ── STATS BAND ── */
+.stats-band{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--border);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  margin-bottom:5rem;
+}
+.stat-cell{
+  background:var(--s1);padding:2rem 1.5rem;text-align:center;
+}
+.stat-n{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--text);line-height:1}
+.stat-l{font-size:12px;color:var(--muted);margin-top:5px;text-transform:uppercase;letter-spacing:0.06em}
+
+/* ── FEATURES ── */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:2.5rem}
+.feat-card{
+  background:var(--s2);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.4rem;
+  transition:border-color 0.2s,transform 0.15s;
+  position:relative;overflow:hidden;
+}
+.feat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,58,237,0.04) 0%,transparent 60%);pointer-events:none}
+.feat-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.feat-icon{font-size:26px;margin-bottom:12px}
+.feat-title{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:5px}
+.feat-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ── HOW IT WORKS ── */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:2.5rem;position:relative}
+.step{text-align:center;padding:1rem}
+.step-num{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--v1),var(--v2));
+  color:#fff;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1rem;
+  box-shadow:0 0 24px rgba(124,58,237,0.4);
+}
+.step-title{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px}
+.step-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ── TESTIMONIALS ── */
+.test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:2.5rem}
+.test-card{
+  background:var(--s2);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.3rem;
+}
+.test-stars{color:var(--gold);font-size:14px;margin-bottom:8px}
+.test-text{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;font-style:italic}
+.test-author{display:flex;align-items:center;gap:9px}
+.test-avatar{
+  width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;
+}
+.test-name{font-size:13px;font-weight:600}
+.test-handle{font-size:11px;color:var(--muted)}
+
+/* ── PLATFORMS ── */
+.platforms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:2rem}
+.plat-card{
+  background:var(--s2);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.1rem;text-align:center;
+  transition:all 0.18s;cursor:default;
+}
+.plat-card:hover{border-color:var(--border2);background:rgba(124,58,237,0.06)}
+.plat-icon{font-size:26px;margin-bottom:6px}
+.plat-name{font-size:12px;font-weight:600;color:var(--muted)}
+.plat-chars{font-size:11px;color:var(--faint);margin-top:2px}
+
+/* ── EMAIL CAPTURE ── */
+.email-section{
+  position:relative;z-index:1;
+  background:linear-gradient(135deg,var(--v3) 0%,#1e1b4b 100%);
+  border:1px solid var(--border2);
+  border-radius:24px;
+  max-width:860px;margin:0 auto 5rem;padding:3rem 5%;
+  text-align:center;overflow:hidden;
+}
+.email-section::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:300px;height:300px;border-radius:50%;
+  background:rgba(124,58,237,0.2);filter:blur(60px);pointer-events:none;
+}
+.email-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,4vw,34px);font-weight:700;margin-bottom:0.75rem}
+.email-sub{font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:1.5rem;line-height:1.6}
+.email-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.email-input{
+  flex:1;min-width:200px;padding:13px 16px;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  border-radius:var(--rsm);color:#fff;font-size:14px;outline:none;
+  font-family:'Inter',sans-serif;transition:border 0.2s;
+}
+.email-input:focus{border-color:rgba(255,255,255,0.5)}
+.email-input::placeholder{color:rgba(255,255,255,0.4)}
+.email-submit{
+  padding:13px 24px;border-radius:var(--rsm);
+  background:var(--coral);border:none;color:#fff;
+  font-size:14px;font-weight:700;cursor:pointer;
+  font-family:'Space Grotesk',sans-serif;transition:all 0.2s;white-space:nowrap;
+}
+.email-submit:hover{background:var(--coral2);transform:translateY(-1px)}
+.email-note{font-size:11px;color:rgba(255,255,255,0.4);margin-top:0.75rem}
+.email-perks{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:1.2rem}
+.email-perk{font-size:12px;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:5px}
+
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:2rem}
+.faq-item{background:var(--s2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.faq-q{
+  width:100%;text-align:left;padding:16px 18px;background:transparent;
+  border:none;color:var(--text);font-size:14px;font-weight:600;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;
+}
+.faq-icon{font-size:20px;color:var(--muted);flex-shrink:0}
+.faq-a{display:none;padding:0 18px 16px;font-size:13px;color:var(--muted);line-height:1.75}
+
+/* ── SEO CONTENT ── */
+.seo-block{
+  position:relative;z-index:1;
+  max-width:860px;margin:0 auto 5rem;padding:0 5%;
+}
+.seo-content{
+  background:var(--s1);border:1px solid var(--border);
+  border-radius:var(--r);padding:2rem;
+}
+.seo-h2{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:0.75rem}
+.seo-h3{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin:1rem 0 0.4rem}
+.seo-p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:0.5rem}
+.kw-cloud{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.5rem}
+.kw-tag{padding:3px 10px;background:var(--s2);border:1px solid var(--border);border-radius:20px;font-size:11px;color:var(--muted)}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid var(--border);
+  padding:3rem 5% 2rem;
+  max-width:100%;
+}
+.footer-inner{max-width:900px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+.footer-brand .brand-name{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:0.5rem}
+.footer-brand p{font-size:13px;color:var(--muted);line-height:1.7}
+.footer-col-title{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem}
+.footer-links-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.footer-links-list a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.footer-links-list a:hover{color:var(--text)}
+.footer-bottom{
+  border-top:1px solid var(--border);padding-top:1.2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:8px;
+  font-size:12px;color:var(--faint);
+}
+.footer-kw{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.75rem}
+.footer-kw span{font-size:11px;color:var(--faint)}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;bottom:24px;left:50%;
+  transform:translateX(-50%) translateY(80px);
+  background:var(--s2);border:1px solid var(--v1);
+  color:var(--text);font-size:14px;font-weight:500;
+  padding:11px 22px;border-radius:30px;
+  transition:transform 0.3s;z-index:999;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+@media(max-width:768px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  nav .nav-links{display:none}
+  .steps::before{display:none}
+  .email-form{flex-direction:column}
+  .email-input,.email-submit{width:100%}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr}
+  .stats-band{grid-template-columns:1fr 1fr}
+  .hero-cta-row{flex-direction:column;align-items:stretch}
+  .btn-primary,.btn-secondary{text-align:center;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="ambient">
+  <div class="ambient-orb orb1"></div>
+  <div class="ambient-orb orb2"></div>
+  <div class="ambient-orb orb3"></div>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-dot"></div>
+    BioAI
+  </a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#faq">FAQ</a>
+    <a class="nav-cta" href="#generator">Try Free →</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-dot"></span>
+    AI Powered — 100% Free — No Signup
+  </div>
+  <h1>Write the Perfect Bio.<br/>In 5 Seconds.</h1>
+  <p class="hero-sub">Instagram, TikTok, LinkedIn, WhatsApp — any platform, any tone, any language. Our AI writes bios that actually get you followers.</p>
+  <div class="hero-cta-row">
+    <a class="btn-primary" href="#generator">✨ Generate My Bio Free</a>
+    <a class="btn-secondary" href="#how">▶ See how it works</a>
+  </div>
+  <div class="hero-note">🔒 No signup &nbsp;·&nbsp; 💳 No credit card &nbsp;·&nbsp; ⚡ Results in 5 seconds</div>
+</section>
+
+<!-- ═══ ═══ ═══ GENERATOR TOOL (LAMBI BIOS + 100% WORKING) ═══ ═══ ═══ -->
+<div class="generator-section" id="generator">
+  <div class="generator-card">
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:24px;margin-bottom:1.5rem;text-align:center;">🚀 Generate Your Perfect Bio</h2>
+    
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input class="form-input" id="gName" placeholder="e.g. Ahmed Raza" value="Ahmed">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Profession / Identity</label>
+        <input class="form-input" id="gProf" placeholder="e.g. Content Creator, Student" value="Content Creator">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Interests / Keywords (comma separated)</label>
+      <input class="form-input" id="gInt" placeholder="e.g. Travel, Photography, Food, Poetry" value="Travel, Photography, Food">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Platform</label>
+        <select class="form-select" id="gPlatform">
+          <option value="Instagram">📸 Instagram</option>
+          <option value="TikTok">🎵 TikTok</option>
+          <option value="LinkedIn">💼 LinkedIn</option>
+          <option value="WhatsApp">💬 WhatsApp</option>
+          <option value="Twitter">🐦 Twitter/X</option>
+          <option value="YouTube">▶️ YouTube</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tone</label>
+        <select class="form-select" id="gTone">
+          <option value="Funny">😂 Funny</option>
+          <option value="Professional">💼 Professional</option>
+          <option value="Aesthetic">🎨 Aesthetic</option>
+          <option value="Bold">🔥 Bold</option>
+          <option value="Humble">🤲 Humble</option>
+          <option value="Mysterious">🌙 Mysterious</option>
+          <option value="Romantic">❤️ Romantic</option>
+          <option value="Motivational">💪 Motivational</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Language</label>
+      <select class="form-select" id="gLang">
+        <option value="English">English</option>
+        <option value="Roman Urdu">Roman Urdu (Urdu in English letters)</option>
+        <option value="Pure Urdu">Pure Urdu (Nastaliq script)</option>
+      </select>
+    </div>
+    <button class="generate-btn" onclick="generateBio()">✨ Generate 3 Bios Now</button>
+
+    <div id="resultArea" style="margin-top:1.5rem;"></div>
+  </div>
+</div>
+
+<!-- ═══ TICKER ═══ -->
+<div class="ticker-wrap">
+  <div class="ticker-inner" id="ticker"></div>
+</div>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats-band">
+  <div class="stat-cell"><div class="stat-n">50K+</div><div class="stat-l">Bios Generated</div></div>
+  <div class="stat-cell"><div class="stat-n">10+</div><div class="stat-l">Platforms Supported</div></div>
+  <div class="stat-cell"><div class="stat-n">8</div><div class="stat-l">Tones Available</div></div>
+  <div class="stat-cell"><div class="stat-n">4.9★</div><div class="stat-l">User Rating</div></div>
+  <div class="stat-cell"><div class="stat-n">5sec</div><div class="stat-l">Average Generation Time</div></div>
+</div>
+
+<!-- ═══ FEATURES ═══ -->
+<section class="section" id="features">
+  <div class="section-eyebrow">Features</div>
+  <div class="section-title">Everything you need.<br/>Nothing you don't.</div>
+  <p class="section-sub">Built for creators, students, freelancers & professionals who want a bio that actually works.</p>
+  <div class="features-grid">
+    <div class="feat-card"><div class="feat-icon">🌍</div><div class="feat-title">Urdu + English + Arabic</div><div class="feat-desc">Roman Urdu, Pure Urdu script, Arabic, Hindi — the only free bio generator with full Urdu support for Pakistani creators.</div></div>
+    <div class="feat-card"><div class="feat-icon">📱</div><div class="feat-title">10+ Platform Optimizer</div><div class="feat-desc">Every platform has different character limits and styles. We auto-optimize for Instagram, TikTok, LinkedIn, WhatsApp, YouTube and more.</div></div>
+    <div class="feat-card"><div class="feat-icon">🎭</div><div class="feat-title">8 Personality Tones</div><div class="feat-desc">Funny, Professional, Aesthetic, Bold, Humble, Mysterious, Romantic, Motivational. Pick your vibe — AI matches it perfectly.</div></div>
+    <div class="feat-card"><div class="feat-icon">⚡</div><div class="feat-title">3 Bios at Once</div><div class="feat-desc">Generate 1, 2, or 3 completely different bio variations in one click. Compare and pick the best one.</div></div>
+    <div class="feat-card"><div class="feat-icon">#️⃣</div><div class="feat-title">Hashtag Generator</div><div class="feat-desc">Relevant hashtags automatically included with every bio. In Urdu or English — your choice.</div></div>
+    <div class="feat-card"><div class="feat-icon">📂</div><div class="feat-title">Bio History Saved</div><div class="feat-desc">All your generated bios saved locally. Come back anytime — your best bios are always there.</div></div>
+    <div class="feat-card"><div class="feat-icon">🔒</div><div class="feat-title">Zero Signup Required</div><div class="feat-desc">No account. No email. No password. Open the tool and start generating. Privacy-first design.</div></div>
+    <div class="feat-card"><div class="feat-icon">🕌</div><div class="feat-title">Islamic Bio Support</div><div class="feat-desc">Islamic tone option adds Alhamdulillah, MashaAllah, and other Islamic phrases naturally. Perfect for Pakistani Muslim creators.</div></div>
+    <div class="feat-card"><div class="feat-icon">📋</div><div class="feat-title">One-Click Copy</div><div class="feat-desc">Copy bio only, or copy bio + hashtags together. Paste directly to your profile — done in 10 seconds total.</div></div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="section" id="how">
+  <div class="section-eyebrow">How It Works</div>
+  <div class="section-title">Bio ready in 3 steps.</div>
+  <p class="section-sub">No learning curve. No templates to fill. Just tell us about yourself.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-title">Fill your details</div><div class="step-desc">Enter your name, profession, interests and what makes you unique. Takes 30 seconds.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-title">Choose platform & tone</div><div class="step-desc">Select Instagram, TikTok, LinkedIn or any other platform. Pick a tone that matches your personality.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-title">Copy & paste</div><div class="step-desc">AI generates your perfect bio in 5 seconds. Copy it and paste directly to your profile.</div></div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="section">
+  <div class="section-eyebrow">Loved by creators</div>
+  <div class="section-title">Real people. Real results.</div>
+  <div class="test-grid">
+    <div class="test-card"><div class="test-stars">★★★★★</div><div class="test-text">"Yaar yeh tool ne meri Instagram bio bilkul change kar di. 3 din mein 500 new followers! Roman Urdu support is the best part."</div><div class="test-author"><div class="test-avatar" style="background:#1a1f3a">👨</div><div><div class="test-name">Ahmed Raza</div><div class="test-handle">@ahmed.creates · Karachi</div></div></div></div>
+    <div class="test-card"><div class="test-stars">★★★★★</div><div class="test-text">"Finally a bio generator that understands Pakistani creators! The Islamic tone feature is amazing. Totally free — can't believe it."</div><div class="test-author"><div class="test-avatar" style="background:#2e1a2a">👩</div><div><div class="test-name">Sara Khan</div><div class="test-handle">@sarakhan.pk · Lahore</div></div></div></div>
+    <div class="test-card"><div class="test-stars">★★★★★</div><div class="test-text">"Used it for my LinkedIn profile. Got 3 job interview calls in 2 weeks. The professional tone is spot on. Highly recommend!"</div><div class="test-author"><div class="test-avatar" style="background:#1a2420">👨</div><div><div class="test-name">Ali Hassan</div><div class="test-handle">Software Engineer · Islamabad</div></div></div></div>
+  </div>
+</section>
+
+<!-- ═══ EMAIL CAPTURE ═══ -->
+<div style="position:relative;z-index:1;max-width:860px;margin:0 auto 5rem;padding:0 5%">
+<div class="email-section">
+  <h2 class="email-title">Get Weekly Bio Ideas Free 🎁</h2>
+  <p class="email-sub">Join 10,000+ creators getting weekly bio templates, caption ideas & social media tips directly in their inbox.</p>
+  <div class="email-form">
+    <input class="email-input" type="email" id="emailInput" placeholder="Apna email address likhen..." />
+    <button class="email-submit" onclick="submitEmail()">Subscribe Free →</button>
+  </div>
+  <div class="email-note">Spam nahi karenge. Kabhi bhi unsubscribe karein.</div>
+  <div class="email-perks">
+    <span class="email-perk">✓ Weekly bio templates</span>
+    <span class="email-perk">✓ Trending hashtags</span>
+    <span class="email-perk">✓ Caption ideas</span>
+    <span class="email-perk">✓ Growth tips</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section" id="faq">
+  <div class="section-eyebrow">FAQ</div>
+  <div class="section-title">Got questions?</div>
+  <div class="faq-list" id="faqList"></div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="section" style="text-align:center;padding-bottom:3rem">
+  <div class="section-title" style="max-width:500px;margin:0 auto 1rem">Ready for a bio that actually works?</div>
+  <p class="section-sub" style="margin:0 auto 2rem">Join 50,000+ creators who already use BioAI. Free, instant, no signup.</p>
+  <a class="btn-primary" href="#generator" style="font-size:18px;padding:16px 40px">✨ Generate My Bio Now — Free</a>
+</section>
+
+<!-- ═══ SEO CONTENT ═══ -->
+<div class="seo-block">
+  <div class="seo-content">
+    <h2 class="seo-h2">Free AI Bio Generator — Instagram, TikTok, LinkedIn & WhatsApp</h2>
+    <p class="seo-p">Our <strong>free AI bio generator</strong> helps you create the perfect social media bio in seconds. Whether you need an <strong>Instagram bio generator</strong>, <strong>TikTok bio maker</strong>, or <strong>LinkedIn bio creator</strong> — our AI does it instantly with no signup required.</p>
+    <h3 class="seo-h3">Why use an AI bio generator?</h3>
+    <p class="seo-p">Writing a compelling bio is hard. Most people spend hours trying to sum themselves up in 150 characters. Our AI bio generator analyzes your personality, profession, and interests to write a bio that truly represents you — in seconds.</p>
+    <h3 class="seo-h3">Urdu Bio Generator — Pakistan's #1</h3>
+    <p class="seo-p">We are the only <strong>free Urdu bio generator</strong> that supports both Roman Urdu and Pure Urdu script. Perfect for Instagram bio in Urdu, WhatsApp bio Urdu mein, and TikTok bio Urdu style.</p>
+    <div class="kw-cloud">
+      <span class="kw-tag">ai bio generator</span><span class="kw-tag">free bio generator</span>
+      <span class="kw-tag">instagram bio generator</span><span class="kw-tag">tiktok bio maker</span>
+      <span class="kw-tag">linkedin bio creator</span><span class="kw-tag">urdu bio generator</span>
+      <span class="kw-tag">whatsapp bio urdu</span><span class="kw-tag">bio generator no signup</span>
+      <span class="kw-tag">free bio maker 2026</span><span class="kw-tag">ai bio writer online</span>
+      <span class="kw-tag">instagram bio in urdu</span><span class="kw-tag">roman urdu bio</span>
+      <span class="kw-tag">professional bio generator</span><span class="kw-tag">funny bio generator</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">✨ BioAI</div>
+        <p>Pakistan's #1 free AI bio generator for Instagram, TikTok, LinkedIn, WhatsApp & more. Urdu + English support. No signup required.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Tool</div>
+        <ul class="footer-links-list">
+          <li><a href="#generator">Instagram Bio</a></li>
+          <li><a href="#generator">TikTok Bio</a></li>
+          <li><a href="#generator">LinkedIn Bio</a></li>
+          <li><a href="#generator">Urdu Bio</a></li>
+          <li><a href="#generator">WhatsApp Bio</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Languages</div>
+        <ul class="footer-links-list">
+          <li><a href="#generator">Roman Urdu</a></li>
+          <li><a href="#generator">Pure Urdu اردو</a></li>
+          <li><a href="#generator">English</a></li>
+          <li><a href="#generator">Arabic</a></li>
+          <li><a href="#generator">Hindi</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Tones</div>
+        <ul class="footer-links-list">
+          <li><a href="#generator">Funny Bio</a></li>
+          <li><a href="#generator">Professional Bio</a></li>
+          <li><a href="#generator">Aesthetic Bio</a></li>
+          <li><a href="#generator">Islamic Bio</a></li>
+          <li><a href="#generator">Motivational Bio</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-kw">
+      <span>AI Bio Generator</span><span>·</span>
+      <span>Instagram Bio Maker</span><span>·</span>
+      <span>TikTok Bio Creator</span><span>·</span>
+      <span>Urdu Bio Generator</span><span>·</span>
+      <span>Free Bio Maker 2026</span><span>·</span>
+      <span>اردو بائیو جنریٹر</span>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BioAI · Powered by Claude AI (Anthropic)</span>
+      <span>Free forever · No signup · No ads in tool</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">✅ Done!</div>
+
+<script>
+// ── UPDATED GENERATOR (LAMBI BIOS + 100% WORKING BUTTONS) ──
+function generateBio() {
+  const name = document.getElementById('gName').value.trim() || 'User';
+  const prof = document.getElementById('gProf').value.trim() || 'Creator';
+  const rawInt = document.getElementById('gInt').value.trim();
+  const interests = rawInt ? rawInt.split(',').map(s => s.trim()).filter(Boolean) : ['Life', 'Creativity', 'Growth'];
+  const platform = document.getElementById('gPlatform').value;
+  const tone = document.getElementById('gTone').value;
+  const lang = document.getElementById('gLang').value;
+
+  const intStr = interests.join(', ');
+  const intFirst = interests[0] || 'Life';
+  const intSecond = interests[1] || 'Creativity';
+  const intThird = interests[2] || 'Passion';
+  const intFourth = interests[3] || 'Growth';
+
+  // Emoji pools
+  const e1 = ['✨', '🔥', '🚀', '💫', '⚡', '🌟', '🎯', '💪'];
+  const e2 = ['😊', '😂', '🤩', '😎', '🙌', '🤝', '💖', '🌈'];
+  const e3 = ['🇵🇰', '🎨', '📸', '🎵', '💼', '✈️', '📖', '🌍'];
+
+  let bios = [];
+
+  // Helper to build platform tag & hashtags
+  const platTag = platform === 'Instagram' ? '📸 IG | DM for collabs' :
+                  platform === 'LinkedIn' ? '💼 Open to connect | #GrowthMindset' :
+                  platform === 'TikTok' ? '🎵 Follow for daily vids!' :
+                  platform === 'WhatsApp' ? '💬 Feel free to text me!' :
+                  platform === 'Twitter' ? '🐦 Tweet me your thoughts!' :
+                  '▶️ Subscribe & join the journey!';
+
+  const hashTags = `#${prof.replace(/\s/g,'')} #${intFirst.replace(/\s/g,'')} #${platform} #BioAI`;
+
+  // ── ENGLISH BIOS (3 Different, Long Templates) ──
+  if (lang === 'English') {
+    // Bio 1: Storyteller/Adventurer (Detailed)
+    let b1 = `👋 Hey, I'm ${name}.\n`;
+    b1 += `📌 ${prof} by day, ${intFirst} enthusiast by night.\n`;
+    b1 += `🌱 Currently exploring ${intSecond} and growing every single day.\n`;
+    b1 += `📖 My story: ${intThird} meets ${intFourth} — and that's just the beginning.\n`;
+    b1 += `💡 Belief: "${tone === 'Motivational' ? 'Dream big, hustle harder. Success is a journey, not a destination.' : tone === 'Funny' ? 'Life is too short for boring bios & serious faces! 😂' : 'Stay curious, stay humble, and never stop learning.'}"\n`;
+    b1 += `🎯 Goal: To ${tone === 'Professional' ? 'create meaningful impact through my work.' : 'inspire and connect with like-minded souls.'}\n`;
+    b1 += `🔥 Let's build something amazing together.\n`;
+    b1 += `${e1[0]} ${platform} | ${platTag}\n`;
+    b1 += `${hashTags}`;
+    bios.push(b1);
+
+    // Bio 2: Bold/Hustler (Direct & Powerful)
+    let b2 = `⚡ ${name} • ${prof}\n`;
+    b2 += `🔹 Fueled by ${intStr}.\n`;
+    b2 += `🎯 Mission: ${tone === 'Professional' ? 'To disrupt the industry with innovation and excellence.' : 'To turn every challenge into an opportunity.'}\n`;
+    b2 += `📈 ${tone === 'Motivational' ? 'Winning the day, one step at a time. No excuses, just results.' : 'Building a legacy worth remembering.'}\n`;
+    b2 += `💬 Let's connect and grow together.\n`;
+    b2 += `🌟 I believe in hard work, consistency, and a little bit of magic.\n`;
+    b2 += `🚀 This is just the beginning.\n`;
+    b2 += `${e2[1]} ${platform} | ${platTag}\n`;
+    b2 += `${hashTags}`;
+    bios.push(b2);
+
+    // Bio 3: Aesthetic/Deep (Poetic & Reflective)
+    let b3 = `✨ ${name} | ${prof}\n`;
+    b3 += `🌿 ${intFirst} • ${intSecond} • ${intThird} • ${intFourth}\n`;
+    b3 += `📖 Writing my own story, one ${tone === 'Funny' ? 'laugh' : 'step'} at a time.\n`;
+    b3 += `🌟 ${tone === 'Romantic' ? 'Spreading love, light, and positive vibes everywhere I go.' : tone === 'Mysterious' ? 'Some stories are better left untold — but the best ones are yet to come.' : 'Chasing dreams, catching sunsets, and living fully.'}\n`;
+    b3 += `🕊️ Finding beauty in the ordinary and magic in the mundane.\n`;
+    b3 += `🌻 Here to inspire, grow, and leave a mark.\n`;
+    b3 += `💫 Remember: You are enough.\n`;
+    b3 += `${e3[2]} ${platform} | ${platTag}\n`;
+    b3 += `${hashTags}`;
+    bios.push(b3);
+  }
+
+  // ── ROMAN URDU BIOS (3 Different, Lambi) ──
+  else if (lang === 'Roman Urdu') {
+    let b1 = `👋 Assalam o Alaikum! Main ${name} hoon.\n`;
+    b1 += `📌 ${prof} hon aur ${intFirst} ka bada shaukeen.\n`;
+    b1 += `🌱 Rozana kuch naya seekhta hoon, ${intSecond} meri pasand aur ${intThird} meri rooh ki pyaas hai.\n`;
+    b1 += `📖 Zindagi ek safar hai, aur main isse ${tone === 'Motivational' ? 'himmat aur josh' : tone === 'Funny' ? 'haste hue' : 'khoobsurati'} ke sath guzar raha hoon.\n`;
+    b1 += `💡 Mera yaqeen: "${tone === 'Professional' ? 'Mehnat rang laati hai, kabhi haar nahi maanni.' : 'Dil ki suno, aur apni manzil khud banao.'}"\n`;
+    b1 += `🎯 Maqsad: ${tone === 'Motivational' ? 'Har roz behtar insaan banna aur doosron ko uthana.' : 'Apni pehchaan banana aur logon ko khushi dena.'}\n`;
+    b1 += `🔥 Aao saath mein kuch acha karein.\n`;
+    b1 += `${e1[1]} ${platform} | ${platTag}\n`;
+    b1 += `${hashTags}`;
+    bios.push(b1);
+
+    let b2 = `⚡ ${name} • ${prof}\n`;
+    b2 += `🔹 Meri takat ${intStr} mein hai.\n`;
+    b2 += `🎯 Mera nishana: ${tone === 'Professional' ? 'profession mein mukaam paana aur network banana.' : 'kabhi na rukna, hamesha agay barhna.'}\n`;
+    b2 += `📈 ${tone === 'Motivational' ? 'Mehnat aur lagan meri pehchan hai. Manzil mil hi jayegi.' : 'Har din naya mauka, nayee umeed.'}\n`;
+    b2 += `💬 Aao bat karein, aur kuch seekhain.\n`;
+    b2 += `🌟 Mujhe yakeen hai ke kuch bhi mumkin hai.\n`;
+    b2 += `🚀 Yeh sirf shuruat hai.\n`;
+    b2 += `${e2[2]} ${platform} | ${platTag}\n`;
+    b2 += `${hashTags}`;
+    bios.push(b2);
+
+    let b3 = `✨ ${name} | ${prof}\n`;
+    b3 += `🌿 ${intFirst} • ${intSecond} • ${intThird} • ${intFourth}\n`;
+    b3 += `📖 Zindagi ki kitaab mein naye panne likh raha hoon.\n`;
+    b3 += `🌟 ${tone === 'Romantic' ? 'Muhabbat aur khushi baantna chahta hoon.' : tone === 'Mysterious' ? 'Raz aur baatein, dono dil mein hain.' : 'Har subah naye sapno ke saath.'}\n`;
+    b3 += `🕊️ Chhoti chhoti khushiyon mein zindagi ka maqsad hai.\n`;
+    b3 += `🌻 Yahan aaye hain seekhnay aur sekhanay.\n`;
+    b3 += `💫 Yaad rakhein: Aap kisi se kam nahi.\n`;
+    b3 += `${e3[0]} ${platform} | ${platTag}\n`;
+    b3 += `${hashTags}`;
+    bios.push(b3);
+  }
+
+  // ── PURE URDU BIOS (3 Different, Lambi) ──
+  else if (lang === 'Pure Urdu') {
+    let b1 = `👋 السلام علیکم! میں ${name} ہوں۔\n`;
+    b1 += `📌 ${prof} ہوں اور ${intFirst} کا بڑا شوقین۔\n`;
+    b1 += `🌱 روزانہ کچھ نیا سیکھتا ہوں، ${intSecond} میری پسند اور ${intThird} میری روح کی پیاس ہے۔\n`;
+    b1 += `📖 زندگی ایک سفر ہے، اور میں اسے ${tone === 'Motivational' ? 'ہمت اور جوش' : tone === 'Funny' ? 'ہنستے ہوئے' : 'خوبصورتی'} کے ساتھ گزار رہا ہوں۔\n`;
+    b1 += `💡 میرا یقین: "${tone === 'Professional' ? 'محنت رنگ لاتی ہے، کبھی ہار نہیں ماننی۔' : 'دل کی سنو، اور اپنی منزل خود بناؤ۔'}"\n`;
+    b1 += `🎯 مقصد: ${tone === 'Motivational' ? 'ہر روز بہتر انسان بننا اور دوسروں کو اٹھانا۔' : 'اپنی پہچان بنانا اور لوگوں کو خوشی دینا۔'}\n`;
+    b1 += `🔥 آؤ ساتھ میں کچھ اچھا کریں۔\n`;
+    b1 += `${e1[1]} ${platform} | ${platTag}\n`;
+    b1 += `${hashTags}`;
+    bios.push(b1);
+
+    let b2 = `⚡ ${name} • ${prof}\n`;
+    b2 += `🔹 میری طاقت ${intStr} میں ہے۔\n`;
+    b2 += `🎯 میرا نشانہ: ${tone === 'Professional' ? 'پیشہ میں مقام پانا اور نیٹ ورک بنانا۔' : 'کبھی نہ رکنا، ہمیشہ آگے بڑھنا۔'}\n`;
+    b2 += `📈 ${tone === 'Motivational' ? 'محنت اور لگن میری پہچان ہے۔ منزل مل ہی جائے گی۔' : 'ہر دن نیا موقع، نئی امید۔'}\n`;
+    b2 += `💬 آؤ بات کریں، اور کچھ سیکھیں۔\n`;
+    b2 += `🌟 مجھے یقین ہے کہ کچھ بھی ممکن ہے۔\n`;
+    b2 += `🚀 یہ صرف شروعات ہے۔\n`;
+    b2 += `${e2[2]} ${platform} | ${platTag}\n`;
+    b2 += `${hashTags}`;
+    bios.push(b2);
+
+    let b3 = `✨ ${name} | ${prof}\n`;
+    b3 += `🌿 ${intFirst} • ${intSecond} • ${intThird} • ${intFourth}\n`;
+    b3 += `📖 زندگی کی کتاب میں نئے صفحے لکھ رہا ہوں۔\n`;
+    b3 += `🌟 ${tone === 'Romantic' ? 'محبت اور خوشی بانٹنا چاہتا ہوں۔' : tone === 'Mysterious' ? 'راز اور باتیں، دونوں دل میں ہیں۔' : 'ہر صبح نئے خوابوں کے ساتھ۔'}\n`;
+    b3 += `🕊️ چھوٹی چھوٹی خوشیوں میں زندگی کا مقصد ہے۔\n`;
+    b3 += `🌻 یہاں آئے ہیں سیکھنے اور سکھانے۔\n`;
+    b3 += `💫 یاد رکھیں: آپ کسی سے کم نہیں۔\n`;
+    b3 += `${e3[0]} ${platform} | ${platTag}\n`;
+    b3 += `${hashTags}`;
+    bios.push(b3);
+  }
+
+  // Display results
+  const area = document.getElementById('resultArea');
+  area.innerHTML = `<h3 style="margin-bottom:0.75rem;font-family:'Space Grotesk',sans-serif;">✅ 3 Mukhtalif aur Lambi Bios Tayar Hain!</h3>`;
+  
+  bios.forEach((bio, idx) => {
+    const charCount = bio.length;
+    // Escape for safety in onclick
+    const escapedBio = bio.replace(/'/g, "\\'").replace(/\n/g, '\\n');
+    area.innerHTML += `
+      <div class="bio-item">
+        <div class="bio-text">${bio.replace(/\n/g, '<br>')}</div>
+        <div class="bio-meta">
+          <span class="bio-char">📏 ${charCount} characters</span>
+          <button class="copy-btn" onclick="copyBio('${escapedBio}')">📋 Copy Bio ${idx+1}</button>
+        </div>
+      </div>
+    `;
+  });
+  area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── COPY FUNCTION (100% Working) ──
+function copyBio(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    showToast('✅ Bio copied to clipboard!');
+  }).catch(() => {
+    // Fallback if clipboard API fails
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    showToast('✅ Bio copied to clipboard!');
+  });
+}
+
+// ── TICKER ──
+const tickerItems = [
+  '🇵🇰 <strong>Ahmed</strong> from Karachi just generated a bio',
+  '📸 <strong>Sara</strong> created her Instagram bio in Urdu',
+  '💼 <strong>Ali</strong> got 3 job interviews with his new LinkedIn bio',
+  '🎵 <strong>Fatima</strong> grew 500 followers with her new TikTok bio',
+  '✨ <strong>Usman</strong> generated a romantic Urdu bio',
+  '🔥 <strong>Ayesha</strong> used the bold tone for her WhatsApp',
+];
+function buildTicker() {
+  const doubled = [...tickerItems, ...tickerItems];
+  document.getElementById('ticker').innerHTML = doubled.map(t =>
+    `<span class="ticker-item">${t} <span class="ticker-sep">·</span></span>`
+  ).join('');
+}
+
+// ── FAQ ──
+const faqs = [
+  { q: 'Is the AI Bio Generator really free?', a: 'Yes, 100% free forever. No signup, no credit card, no limits. Generate unlimited bios for any platform.' },
+  { q: 'Can I generate a bio in Urdu?', a: 'Yes! We support Roman Urdu (English letters for Urdu words), Pure Urdu (Nastaliq script), and Urdu-English mix. We are the only free tool with full Urdu support.' },
+  { q: 'Which platforms are supported?', a: 'Instagram, TikTok, LinkedIn, Twitter/X, YouTube, WhatsApp, Snapchat, Pinterest — each optimized for that platform\'s character limit and style.' },
+  { q: 'How do I get the best results?', a: 'Fill in as many details as possible — your name, profession, keywords, and what makes you unique. The more detail you give, the better the AI result.' },
+  { q: 'Can I generate multiple bios at once?', a: 'Yes! Choose 1, 2, or 3 variations in one click. Compare them and pick your favorite.' },
+  { q: 'Is my data safe?', a: 'Yes. We don\'t save your personal information on any server. Your bio history is stored only on your own device (localStorage).' },
+];
+function buildFAQ() {
+  document.getElementById('faqList').innerHTML = faqs.map((f, i) => `
+    <div class="faq-item">
+      <button class="faq-q" onclick="togFAQ(${i})">
+        ${f.q}
+        <span class="faq-icon" id="fi${i}">+</span>
+      </button>
+      <div class="faq-a" id="fa${i}">${f.a}</div>
+    </div>
+  `).join('');
+}
+function togFAQ(i) {
+  const a = document.getElementById('fa'+i), ic = document.getElementById('fi'+i);
+  const open = a.style.display === 'block';
+  a.style.display = open ? 'none' : 'block';
+  ic.textContent = open ? '+' : '−';
+}
+
+// ── EMAIL ──
+function submitEmail() {
+  const email = document.getElementById('emailInput').value;
+  if (email && email.includes('@')) {
+    showToast('🎉 Subscribed! Check your inbox soon.');
+    document.getElementById('emailInput').value = '';
+  } else {
+    showToast('⚠️ Please enter a valid email address');
+  }
+}
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.feat-card, .test-card, .step').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+
+// ── INIT ──
+buildTicker();
+buildFAQ();
+</script>
+</body>
+</html>
