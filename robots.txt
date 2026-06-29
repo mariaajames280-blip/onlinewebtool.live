@@ -1,0 +1,26 @@
+# تمام سرچ انجنوں کو اجازت
+User-agent: *
+
+# پوری سائٹ کو کرال کرنے کی اجازت
+Allow: /
+
+# پرانی سائٹ کے راستے (جو اب موجود نہیں) کو بلاک کریں
+Disallow: /qr-code-generator
+Disallow: /pdf-tools
+Disallow: /json-tools
+Disallow: /seo-tools
+Disallow: /image-tools
+Disallow: /color-tools
+Disallow: /calculators
+Disallow: /youtube-tools
+
+# انتظامی اور نجی راستوں کو بلاک کریں (اگر کوئی ہیں)
+Disallow: /admin
+Disallow: /wp-admin
+Disallow: /cgi-bin
+
+# وسائل (CSS, JS) کو کرال کرنے کی اجازت (اگر چاہیں تو)
+# یہ ڈیفالٹ طور پر اجازت ہے، اس لیے انہیں بلاک کرنے کی ضرورت نہیں
+
+# Sitemap کا راستہ بتائیں
+Sitemap: https://onlinewebtool.live/sitemap.xml
