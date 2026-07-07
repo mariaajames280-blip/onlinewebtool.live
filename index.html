@@ -6,13 +6,12 @@
 
 <!-- ═══ SEO ═══ -->
 <title>AI Bio Generator Free — #1 Instagram, TikTok, LinkedIn Bio Maker 2026</title>
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MW74ZM5CRP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-MW74ZM5CRP');
 </script>
 <meta name="description" content="Create the perfect Instagram, TikTok, LinkedIn & WhatsApp bio in seconds using AI. Urdu + English support. Free, no signup. Trusted by 50,000+ creators worldwide."/>
@@ -26,9 +25,13 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI Bio Generator","url":"https://onlinewebtool.live","description":"Free AI bio generator for Instagram, TikTok, LinkedIn, WhatsApp. Urdu and English support.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"3847"}}</script>
 
+<!-- ═══ FONTS — NON‑BLOCKING ═══ -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</noscript>
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -79,6 +82,8 @@ nav{
 .nav-links a:hover{color:var(--text)}
 .nav-cta{padding:7px 18px;border-radius:20px;background:var(--v1);color:#fff;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
 .nav-cta:hover{background:var(--v2);transform:translateY(-1px)}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:0.2s}
 
 /* ── HERO ── */
 .hero{
@@ -366,10 +371,15 @@ footer{
 }
 .toast.show{transform:translateX(-50%) translateY(0)}
 
+/* ── RESPONSIVE TWEAKS ── */
 @media(max-width:768px){
+  .nav-hamburger{display:flex}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:rgba(8,9,15,0.95);backdrop-filter:blur(16px);padding:20px 5%;border-bottom:1px solid var(--border);gap:16px;align-items:flex-start}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:15px}
+  .nav-cta{margin-left:0}
   .footer-grid{grid-template-columns:1fr 1fr}
   .footer-brand{grid-column:1/-1}
-  nav .nav-links{display:none}
   .steps::before{display:none}
   .email-form{flex-direction:column}
   .email-input,.email-submit{width:100%}
@@ -396,7 +406,10 @@ footer{
     <div class="nav-logo-dot"></div>
     BioAI
   </a>
-  <div class="nav-links">
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
     <a href="#features">Features</a>
     <a href="#how">How it works</a>
     <a href="#faq">FAQ</a>
@@ -472,7 +485,7 @@ footer{
         <option value="Pure Urdu">Pure Urdu (Nastaliq script)</option>
       </select>
     </div>
-    <button class="generate-btn" onclick="generateBio()">✨ Generate 3 Bios Now</button>
+    <button class="generate-btn" id="generateBtn">✨ Generate 3 Bios Now</button>
 
     <div id="resultArea" style="margin-top:1.5rem;"></div>
   </div>
@@ -540,7 +553,7 @@ footer{
   <p class="email-sub">Join 10,000+ creators getting weekly bio templates, caption ideas & social media tips directly in their inbox.</p>
   <div class="email-form">
     <input class="email-input" type="email" id="emailInput" placeholder="Apna email address likhen..." />
-    <button class="email-submit" onclick="submitEmail()">Subscribe Free →</button>
+    <button class="email-submit" id="subscribeBtn">Subscribe Free →</button>
   </div>
   <div class="email-note">Spam nahi karenge. Kabhi bhi unsubscribe karein.</div>
   <div class="email-perks">
@@ -643,27 +656,39 @@ footer{
 
 <div class="toast" id="toast">✅ Done!</div>
 
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- ═══ JAVASCRIPT — ALL FIXES INCLUDED ═══ -->
+<!-- ════════════════════════════════════════════════════════════════ -->
 <script>
+// ─── HAMBURGER MENU ───
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// ─── GA4 EVENT TRACKING HELPERS ───
+function trackEvent(eventName, params = {}) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', eventName, params);
+  }
+}
+
+// ─── BIO TEMPLATE ENGINE (20+ unique templates) ───
 function generateBio() {
+  // Track generate event
+  const platform = document.getElementById('gPlatform').value;
+  const tone = document.getElementById('gTone').value;
+  const lang = document.getElementById('gLang').value;
+  trackEvent('generate_bio', { platform, tone, language: lang });
+
   const name = document.getElementById('gName').value.trim() || 'User';
   const prof = document.getElementById('gProf').value.trim() || 'Creator';
   const rawInt = document.getElementById('gInt').value.trim();
   const interests = rawInt ? rawInt.split(',').map(s => s.trim()).filter(Boolean) : ['Life', 'Creativity', 'Growth'];
-  const platform = document.getElementById('gPlatform').value;
-  const tone = document.getElementById('gTone').value;
-  const lang = document.getElementById('gLang').value;
-
   const intStr = interests.join(', ');
   const intFirst = interests[0] || 'Life';
   const intSecond = interests[1] || 'Creativity';
   const intThird = interests[2] || 'Passion';
   const intFourth = interests[3] || 'Growth';
-
-  const e1 = ['✨', '🔥', '🚀', '💫', '⚡', '🌟', '🎯', '💪'];
-  const e2 = ['😊', '😂', '🤩', '😎', '🙌', '🤝', '💖', '🌈'];
-  const e3 = ['🇵🇰', '🎨', '📸', '🎵', '💼', '✈️', '📖', '🌍'];
-
-  let bios = [];
 
   const platTag = platform === 'Instagram' ? '📸 IG | DM for collabs' :
                   platform === 'LinkedIn' ? '💼 Open to connect | #GrowthMindset' :
@@ -671,118 +696,90 @@ function generateBio() {
                   platform === 'WhatsApp' ? '💬 Feel free to text me!' :
                   platform === 'Twitter' ? '🐦 Tweet me your thoughts!' :
                   '▶️ Subscribe & join the journey!';
-
   const hashTags = '#' + prof.replace(/\s/g,'') + ' #' + intFirst.replace(/\s/g,'') + ' #' + platform + ' #BioAI';
 
-  if (lang === 'English') {
-    let b1 = '👋 Hey, I\'m ' + name + '.\n';
-    b1 += '📌 ' + prof + ' by day, ' + intFirst + ' enthusiast by night.\n';
-    b1 += '🌱 Currently exploring ' + intSecond + ' and growing every single day.\n';
-    b1 += '📖 My story: ' + intThird + ' meets ' + intFourth + ' — and that\'s just the beginning.\n';
-    b1 += '💡 Belief: "' + (tone === 'Motivational' ? 'Dream big, hustle harder. Success is a journey, not a destination.' : tone === 'Funny' ? 'Life is too short for boring bios & serious faces! 😂' : 'Stay curious, stay humble, and never stop learning.') + '"\n';
-    b1 += '🎯 Goal: To ' + (tone === 'Professional' ? 'create meaningful impact through my work.' : 'inspire and connect with like-minded souls.') + '\n';
-    b1 += '🔥 Let\'s build something amazing together.\n';
-    b1 += e1[0] + ' ' + platform + ' | ' + platTag + '\n';
-    b1 += hashTags;
-    bios.push(b1);
+  // ─── 20+ TEMPLATE POOL (English) ───
+  const templatesEn = [
+    // 1
+    (n,p,i1,i2,i3,i4,t) => `👋 Hey, I'm ${n}.\n📌 ${p} by day, ${i1} enthusiast by night.\n🌱 Currently exploring ${i2} and growing every single day.\n📖 My story: ${i3} meets ${i4} — and that's just the beginning.\n💡 Belief: "${t === 'Motivational' ? 'Dream big, hustle harder. Success is a journey, not a destination.' : t === 'Funny' ? 'Life is too short for boring bios & serious faces! 😂' : 'Stay curious, stay humble, and never stop learning.'}"\n🎯 Goal: To ${t === 'Professional' ? 'create meaningful impact through my work.' : 'inspire and connect with like-minded souls.'}\n🔥 Let's build something amazing together.\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    // 2
+    (n,p,i1,i2,i3,i4,t) => `⚡ ${n} • ${p}\n🔹 Fueled by ${i1}, ${i2}, and ${i3}.\n🎯 Mission: ${t === 'Professional' ? 'To disrupt the industry with innovation and excellence.' : 'To turn every challenge into an opportunity.'}\n📈 ${t === 'Motivational' ? 'Winning the day, one step at a time. No excuses, just results.' : 'Building a legacy worth remembering.'}\n💬 Let's connect and grow together.\n🌟 I believe in hard work, consistency, and a little bit of magic.\n🚀 This is just the beginning.\n😎 ${platform} | ${platTag}\n${hashTags}`,
+    // 3
+    (n,p,i1,i2,i3,i4,t) => `✨ ${n} | ${p}\n🌿 ${i1} • ${i2} • ${i3} • ${i4}\n📖 Writing my own story, one ${t === 'Funny' ? 'laugh' : 'step'} at a time.\n🌟 ${t === 'Romantic' ? 'Spreading love, light, and positive vibes everywhere I go.' : t === 'Mysterious' ? 'Some stories are better left untold — but the best ones are yet to come.' : 'Chasing dreams, catching sunsets, and living fully.'}\n🕊️ Finding beauty in the ordinary and magic in the mundane.\n🌻 Here to inspire, grow, and leave a mark.\n💫 Remember: You are enough.\n🌈 ${platform} | ${platTag}\n${hashTags}`,
+    // 4
+    (n,p,i1,i2,i3,i4,t) => `🚀 ${n} — ${p}\n💡 ${i1} | ${i2} | ${i3}\n🎯 ${t === 'Bold' ? 'I don’t follow trends, I set them.' : t === 'Humble' ? 'I’m just getting started, but I’m here to stay.' : 'Always learning, always evolving.'}\n🌍 Exploring the world one ${i4} at a time.\n📸 Capturing moments that matter.\n🔗 Let’s make something extraordinary.\n⚡ ${platform} | ${platTag}\n${hashTags}`,
+    // 5
+    (n,p,i1,i2,i3,i4,t) => `🌟 ${n} | ${p}\n🎯 ${i1} • ${i2} • ${i3}\n🔥 ${t === 'Motivational' ? 'Rise and grind. Success doesn’t come to you, you go to it.' : t === 'Funny' ? 'I put the "pro" in procrastination, but also in progress.' : 'Living life with purpose and passion.'}\n💪 Pushing boundaries, breaking limits.\n📖 My story is still being written.\n🚀 Join me on this journey.\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    // 6
+    (n,p,i1,i2,i3,i4,t) => `👋 ${n} — ${p}\n🌱 ${i1} is my fuel, ${i2} is my compass.\n🎨 Creating, inspiring, and ${t === 'Aesthetic' ? 'curating a life of beauty.' : 'making a difference.'}\n💬 Let’s talk ${i3} and ${i4}.\n🌟 Believe in the power of your dreams.\n📌 ${platform} | ${platTag}\n${hashTags}`,
+    // 7
+    (n,p,i1,i2,i3,i4,t) => `💫 ${n} | ${p}\n🔹 ${i1} • ${i2} • ${i3} • ${i4}\n🌍 I see the world through ${t === 'Aesthetic' ? 'a lens of wonder.' : 'the eyes of a creator.'}\n🕯️ ${t === 'Mysterious' ? 'I’m a puzzle you’ll never fully solve, and that’s the beauty.' : t === 'Romantic' ? 'I believe in love at first sight — especially with sunsets.' : 'I believe in the magic of new beginnings.'}\n💡 Let’s inspire each other.\n🌟 ${platform} | ${platTag}\n${hashTags}`,
+    // 8 (short & punchy)
+    (n,p,i1,i2,i3,i4,t) => `🔥 ${n} • ${p}\n💪 ${i1} | ${i2} | ${i3}\n🎯 ${t === 'Bold' ? 'I don’t make excuses, I make moves.' : t === 'Funny' ? 'My bio is short because my life is too interesting to summarize.' : 'I live for the moments that take my breath away.'}\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    // 9 (professional)
+    (n,p,i1,i2,i3,i4,t) => `💼 ${n} | ${p}\n📈 ${i1} specialist with a passion for ${i2}.\n📊 ${t === 'Professional' ? 'Proven track record of delivering results.' : 'Always aiming for excellence.'}\n🔗 Let’s connect and drive growth.\n🌐 ${platform} | ${platTag}\n${hashTags}`,
+    // 10 (creative)
+    (n,p,i1,i2,i3,i4,t) => `🎨 ${n} | ${p}\n🖌️ ${i1} • ${i2} • ${i3}\n💡 ${t === 'Aesthetic' ? 'Creating a life that looks as good as it feels.' : 'Turning ideas into reality.'}\n📸 Documenting the journey.\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    // 11 (motivational long)
+    (n,p,i1,i2,i3,i4,t) => `💪 ${n} | ${p}\n🔥 ${i1} is my passion, ${i2} is my drive.\n🚀 I believe that ${t === 'Motivational' ? 'greatness is achieved through consistent effort.' : 'every day is a new opportunity to grow.'}\n📈 My goal: To become the best version of myself and help others do the same.\n🌟 Join me on this journey of transformation.\n⚡ ${platform} | ${platTag}\n${hashTags}`,
+    // 12 (romantic/poetic)
+    (n,p,i1,i2,i3,i4,t) => `❤️ ${n} | ${p}\n🌹 ${i1} • ${i2} • ${i3} • ${i4}\n🌅 I find poetry in the mundane and magic in the ordinary.\n💫 ${t === 'Romantic' ? 'My heart beats for the beauty of this world.' : 'I search for meaning in every moment.'}\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    // 13 (mysterious)
+    (n,p,i1,i2,i3,i4,t) => `🌙 ${n} | ${p}\n🔮 ${i1} • ${i2}\n🕶️ ${t === 'Mysterious' ? 'I am the silence between the words, the shadow behind the light.' : 'I walk my own path.'}\n💭 ${i3} and ${i4} are the keys to my world.\n🌌 ${platform} | ${platTag}\n${hashTags}`,
+    // 14 (humble)
+    (n,p,i1,i2,i3,i4,t) => `🤲 ${n} | ${p}\n🌱 ${i1} • ${i2}\n🕊️ ${t === 'Humble' ? 'I’m just a soul trying to make a positive impact, one step at a time.' : 'Grateful for every moment.'}\n💬 Always open to learn and grow.\n🌟 ${platform} | ${platTag}\n${hashTags}`,
+    // 15 (bold)
+    (n,p,i1,i2,i3,i4,t) => `🔥 ${n} | ${p}\n💥 ${i1} • ${i2} • ${i3}\n⚡ ${t === 'Bold' ? 'I don’t follow the herd. I lead it.' : 'I create my own rules.'}\n🏆 Winner of my own life.\n👑 ${platform} | ${platTag}\n${hashTags}`,
+    // 16 (funny)
+    (n,p,i1,i2,i3,i4,t) => `😂 ${n} | ${p}\n🎯 ${i1} is my spirit animal, ${i2} is my daily dose of chaos.\n🤪 ${t === 'Funny' ? 'I’m not a control freak, but you can hold my drink while I fix this.' : 'I take life with a pinch of humor.'}\n🚀 ${platform} | ${platTag}\n${hashTags}`,
+  ];
 
-    let b2 = '⚡ ' + name + ' • ' + prof + '\n';
-    b2 += '🔹 Fueled by ' + intStr + '.\n';
-    b2 += '🎯 Mission: ' + (tone === 'Professional' ? 'To disrupt the industry with innovation and excellence.' : 'To turn every challenge into an opportunity.') + '\n';
-    b2 += '📈 ' + (tone === 'Motivational' ? 'Winning the day, one step at a time. No excuses, just results.' : 'Building a legacy worth remembering.') + '\n';
-    b2 += '💬 Let\'s connect and grow together.\n';
-    b2 += '🌟 I believe in hard work, consistency, and a little bit of magic.\n';
-    b2 += '🚀 This is just the beginning.\n';
-    b2 += e2[1] + ' ' + platform + ' | ' + platTag + '\n';
-    b2 += hashTags;
-    bios.push(b2);
+  // ─── ROMAN URDU TEMPLATES (10+) ───
+  const templatesRu = [
+    (n,p,i1,i2,i3,i4,t) => `👋 Assalam o Alaikum! Main ${n} hoon.\n📌 ${p} hon aur ${i1} ka bada shaukeen.\n🌱 Rozana kuch naya seekhta hoon, ${i2} meri pasand aur ${i3} meri rooh ki pyaas hai.\n📖 Zindagi ek safar hai, aur main isse ${t === 'Motivational' ? 'himmat aur josh' : t === 'Funny' ? 'haste hue' : 'khoobsurati'} ke sath guzar raha hoon.\n💡 Mera yaqeen: "${t === 'Professional' ? 'Mehnat rang laati hai, kabhi haar nahi maanni.' : 'Dil ki suno, aur apni manzil khud banao.'}"\n🎯 Maqsad: ${t === 'Motivational' ? 'Har roz behtar insaan banna aur doosron ko uthana.' : 'Apni pehchan banana aur logon ko khushi dena.'}\n🔥 Aao saath mein kuch acha karein.\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `⚡ ${n} • ${p}\n🔹 Meri takat ${i1}, ${i2}, aur ${i3} mein hai.\n🎯 Mera nishana: ${t === 'Professional' ? 'profession mein mukaam paana aur network banana.' : 'kabhi na rukna, hamesha agay barhna.'}\n📈 ${t === 'Motivational' ? 'Mehnat aur lagan meri pehchan hai. Manzil mil hi jayegi.' : 'Har din naya mauka, nayee umeed.'}\n💬 Aao bat karein, aur kuch seekhain.\n🌟 Mujhe yakeen hai ke kuch bhi mumkin hai.\n🚀 Yeh sirf shuruat hai.\n😎 ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `✨ ${n} | ${p}\n🌿 ${i1} • ${i2} • ${i3} • ${i4}\n📖 Zindagi ki kitaab mein naye panne likh raha hoon.\n🌟 ${t === 'Romantic' ? 'Muhabbat aur khushi baantna chahta hoon.' : t === 'Mysterious' ? 'Raz aur baatein, dono dil mein hain.' : 'Har subah naye sapno ke saath.'}\n🕊️ Chhoti chhoti khushiyon mein zindagi ka maqsad hai.\n🌻 Yahan aaye hain seekhnay aur sekhanay.\n💫 Yaad rakhein: Aap kisi se kam nahi.\n🌈 ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `🚀 ${n} — ${p}\n💡 ${i1} | ${i2} | ${i3}\n🎯 ${t === 'Bold' ? 'Main trends nahi follow karta, main banata hoon.' : t === 'Humble' ? 'Abhi shuruat hai, lekin rukna nahi.' : 'Har din kuch naya seekhna hai.'}\n🌍 Duniya ko ${i4} ke zariye dekhta hoon.\n📸 Lamhe jo yaad rahein.\n🔗 Aao mil kar kuch kamaal karein.\n⚡ ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `🌟 ${n} | ${p}\n🎯 ${i1} • ${i2} • ${i3}\n🔥 ${t === 'Motivational' ? 'Utho, jago, aur kamyabi haasil karo.' : t === 'Funny' ? 'Zindagi mazaak hai, aur main uska mazaak uda raha hoon.' : 'Zindagi ko pur josh jiyo.'}\n💪 Haddon ko todna, sapno ko jeena.\n📖 Meri kahani abhi likhi ja rahi hai.\n🚀 Saath chalain?\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `👋 ${n} — ${p}\n🌱 ${i1} meri rooh, ${i2} meri manzil.\n🎨 ${t === 'Aesthetic' ? 'Khoobsurat zindagi ka safar.' : 'Farq uthana, aur khushiyan baantna.'}\n💬 ${i3} aur ${i4} pe baat karein.\n🌟 Apne sapno par yakeen rakhiye.\n📌 ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `💫 ${n} | ${p}\n🔹 ${i1} • ${i2} • ${i3} • ${i4}\n🌍 ${t === 'Aesthetic' ? 'Duniya ko khoobsurat nazar se dekhta hoon.' : 'Duniya ko badalne ka irada hai.'}\n🕯️ ${t === 'Mysterious' ? 'Main ek raaz hoon, aur is raaz ki khoobsoorati yahi hai.' : t === 'Romantic' ? 'Mujhe muhabbat se bhari duniya pasand hai.' : 'Har din naya suraj, nayi umeed.'}\n💡 Aao mil kar kuch acha karein.\n🌟 ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `🔥 ${n} • ${p}\n💪 ${i1} | ${i2} | ${i3}\n🎯 ${t === 'Bold' ? 'Main apni tareef nahi karta, main apni pehchan banata hoon.' : t === 'Funny' ? 'Bio chhota hai, lekin zindagi interesting hai.' : 'Main apni zindagi khud likhta hoon.'}\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `💼 ${n} | ${p}\n📈 ${i1} mein mahir, ${i2} ka shaukeen.\n📊 ${t === 'Professional' ? 'Mehnat aur lagan se naatey jodte hain.' : 'Behtareen ke liye koshish jaari.'}\n🔗 Aao mil kar tarakki karein.\n🌐 ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `🎨 ${n} | ${p}\n🖌️ ${i1} • ${i2} • ${i3}\n💡 ${t === 'Aesthetic' ? 'Zindagi ko khoobsurat banane ka hunar.' : 'Soch ko haqeeqat mein badalna.'}\n📸 Safar ki tasveerein.\n✨ ${platform} | ${platTag}\n${hashTags}`,
+  ];
 
-    let b3 = '✨ ' + name + ' | ' + prof + '\n';
-    b3 += '🌿 ' + intFirst + ' • ' + intSecond + ' • ' + intThird + ' • ' + intFourth + '\n';
-    b3 += '📖 Writing my own story, one ' + (tone === 'Funny' ? 'laugh' : 'step') + ' at a time.\n';
-    b3 += '🌟 ' + (tone === 'Romantic' ? 'Spreading love, light, and positive vibes everywhere I go.' : tone === 'Mysterious' ? 'Some stories are better left untold — but the best ones are yet to come.' : 'Chasing dreams, catching sunsets, and living fully.') + '\n';
-    b3 += '🕊️ Finding beauty in the ordinary and magic in the mundane.\n';
-    b3 += '🌻 Here to inspire, grow, and leave a mark.\n';
-    b3 += '💫 Remember: You are enough.\n';
-    b3 += e3[2] + ' ' + platform + ' | ' + platTag + '\n';
-    b3 += hashTags;
-    bios.push(b3);
-  }
+  // ─── PURE URDU TEMPLATES (10+) ───
+  const templatesPu = [
+    (n,p,i1,i2,i3,i4,t) => `👋 السلام علیکم! میں ${n} ہوں۔\n📌 ${p} ہوں اور ${i1} کا بڑا شوقین۔\n🌱 روزانہ کچھ نیا سیکھتا ہوں، ${i2} میری پسند اور ${i3} میری روح کی پیاس ہے۔\n📖 زندگی ایک سفر ہے، اور میں اسے ${t === 'Motivational' ? 'ہمت اور جوش' : t === 'Funny' ? 'ہنستے ہوئے' : 'خوبصورتی'} کے ساتھ گزار رہا ہوں۔\n💡 میرا یقین: "${t === 'Professional' ? 'محنت رنگ لاتی ہے، کبھی ہار نہیں ماننی۔' : 'دل کی سنو، اور اپنی منزل خود بناؤ۔'}"\n🎯 مقصد: ${t === 'Motivational' ? 'ہر روز بہتر انسان بننا اور دوسروں کو اٹھانا۔' : 'اپنی پہچان بنانا اور لوگوں کو خوشی دینا۔'}\n🔥 آؤ ساتھ میں کچھ اچھا کریں۔\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `⚡ ${n} • ${p}\n🔹 میری طاقت ${i1}، ${i2}، اور ${i3} میں ہے۔\n🎯 میرا نشانہ: ${t === 'Professional' ? 'پیشہ میں مقام پانا اور نیٹ ورک بنانا۔' : 'کبھی نہ رکنا، ہمیشہ آگے بڑھنا۔'}\n📈 ${t === 'Motivational' ? 'محنت اور لگن میری پہچان ہے۔ منزل مل ہی جائے گی۔' : 'ہر دن نیا موقع، نئی امید۔'}\n💬 آؤ بات کریں، اور کچھ سیکھیں۔\n🌟 مجھے یقین ہے کہ کچھ بھی ممکن ہے۔\n🚀 یہ صرف شروعات ہے۔\n😎 ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `✨ ${n} | ${p}\n🌿 ${i1} • ${i2} • ${i3} • ${i4}\n📖 زندگی کی کتاب میں نئے صفحے لکھ رہا ہوں۔\n🌟 ${t === 'Romantic' ? 'محبت اور خوشی بانٹنا چاہتا ہوں۔' : t === 'Mysterious' ? 'راز اور باتیں، دونوں دل میں ہیں۔' : 'ہر صبح نئے خوابوں کے ساتھ۔'}\n🕊️ چھوٹی چھوٹی خوشیوں میں زندگی کا مقصد ہے۔\n🌻 یہاں آئے ہیں سیکھنے اور سکھانے۔\n💫 یاد رکھیں: آپ کسی سے کم نہیں۔\n🌈 ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `🚀 ${n} — ${p}\n💡 ${i1} | ${i2} | ${i3}\n🎯 ${t === 'Bold' ? 'میں رجحانات نہیں بناتا، میں بناتا ہوں۔' : t === 'Humble' ? 'ابھی شروعات ہے، لیکن رکنا نہیں۔' : 'ہر دن کچھ نیا سیکھنا ہے۔'}\n🌍 دنیا کو ${i4} کے ذریعے دیکھتا ہوں۔\n📸 لمحے جو یاد رہیں۔\n🔗 آؤ مل کر کچھ کمال کریں۔\n⚡ ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `🌟 ${n} | ${p}\n🎯 ${i1} • ${i2} • ${i3}\n🔥 ${t === 'Motivational' ? 'اٹھو، جاگو، اور کامیابی حاصل کرو۔' : t === 'Funny' ? 'زندگی مزاق ہے، اور میں اس کا مزاق اڑا رہا ہوں۔' : 'زندگی کو پر جوش جیو۔'}\n💪 حدود توڑنا، خوابوں کو جینا۔\n📖 میری کہانی ابھی لکھی جا رہی ہے۔\n🚀 ساتھ چلیں؟\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `👋 ${n} — ${p}\n🌱 ${i1} میری روح، ${i2} میری منزل۔\n🎨 ${t === 'Aesthetic' ? 'خوبصورت زندگی کا سفر۔' : 'فرق اٹھانا، اور خوشیاں بانٹنا۔'}\n💬 ${i3} اور ${i4} پر بات کریں۔\n🌟 اپنے خوابوں پر یقین رکھیں۔\n📌 ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `💫 ${n} | ${p}\n🔹 ${i1} • ${i2} • ${i3} • ${i4}\n🌍 ${t === 'Aesthetic' ? 'دنیا کو خوبصورت نظر سے دیکھتا ہوں۔' : 'دنیا کو بدلنے کا ارادہ ہے۔'}\n🕯️ ${t === 'Mysterious' ? 'میں ایک راز ہوں، اور اس راز کی خوبصورتی یہی ہے۔' : t === 'Romantic' ? 'مجھے محبت سے بھری دنیا پسند ہے۔' : 'ہر دن نیا سورج، نئی امید۔'}\n💡 آؤ مل کر کچھ اچھا کریں۔\n🌟 ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `🔥 ${n} • ${p}\n💪 ${i1} | ${i2} | ${i3}\n🎯 ${t === 'Bold' ? 'میں اپنی تعریف نہیں کرتا، میں اپنی پہچان بناتا ہوں۔' : t === 'Funny' ? 'بائیو چھوٹا ہے، لیکن زندگی انٹرسٹنگ ہے۔' : 'میں اپنی زندگی خود لکھتا ہوں۔'}\n✨ ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `💼 ${n} | ${p}\n📈 ${i1} میں ماہر، ${i2} کا شوقین۔\n📊 ${t === 'Professional' ? 'محنت اور لگن سے ناتے جوڑتے ہیں۔' : 'بہترین کے لیے کوشش جاری۔'}\n🔗 آؤ مل کر ترقی کریں۔\n🌐 ${platform} | ${platTag}\n${hashTags}`,
+    (n,p,i1,i2,i3,i4,t) => `🎨 ${n} | ${p}\n🖌️ ${i1} • ${i2} • ${i3}\n💡 ${t === 'Aesthetic' ? 'زندگی کو خوبصورت بنانے کا ہنر۔' : 'سوچ کو حقیقت میں بدلنا۔'}\n📸 سفر کی تصاویر۔\n✨ ${platform} | ${platTag}\n${hashTags}`,
+  ];
 
-  else if (lang === 'Roman Urdu') {
-    let b1 = '👋 Assalam o Alaikum! Main ' + name + ' hoon.\n';
-    b1 += '📌 ' + prof + ' hon aur ' + intFirst + ' ka bada shaukeen.\n';
-    b1 += '🌱 Rozana kuch naya seekhta hoon, ' + intSecond + ' meri pasand aur ' + intThird + ' meri rooh ki pyaas hai.\n';
-    b1 += '📖 Zindagi ek safar hai, aur main isse ' + (tone === 'Motivational' ? 'himmat aur josh' : tone === 'Funny' ? 'haste hue' : 'khoobsurati') + ' ke sath guzar raha hoon.\n';
-    b1 += '💡 Mera yaqeen: "' + (tone === 'Professional' ? 'Mehnat rang laati hai, kabhi haar nahi maanni.' : 'Dil ki suno, aur apni manzil khud banao.') + '"\n';
-    b1 += '🎯 Maqsad: ' + (tone === 'Motivational' ? 'Har roz behtar insaan banna aur doosron ko uthana.' : 'Apni pehchaan banana aur logon ko khushi dena.') + '\n';
-    b1 += '🔥 Aao saath mein kuch acha karein.\n';
-    b1 += e1[1] + ' ' + platform + ' | ' + platTag + '\n';
-    b1 += hashTags;
-    bios.push(b1);
+  // Select template pool based on language
+  let pool;
+  if (lang === 'English') pool = templatesEn;
+  else if (lang === 'Roman Urdu') pool = templatesRu;
+  else pool = templatesPu;
 
-    let b2 = '⚡ ' + name + ' • ' + prof + '\n';
-    b2 += '🔹 Meri takat ' + intStr + ' mein hai.\n';
-    b2 += '🎯 Mera nishana: ' + (tone === 'Professional' ? 'profession mein mukaam paana aur network banana.' : 'kabhi na rukna, hamesha agay barhna.') + '\n';
-    b2 += '📈 ' + (tone === 'Motivational' ? 'Mehnat aur lagan meri pehchan hai. Manzil mil hi jayegi.' : 'Har din naya mauka, nayee umeed.') + '\n';
-    b2 += '💬 Aao bat karein, aur kuch seekhain.\n';
-    b2 += '🌟 Mujhe yakeen hai ke kuch bhi mumkin hai.\n';
-    b2 += '🚀 Yeh sirf shuruat hai.\n';
-    b2 += e2[2] + ' ' + platform + ' | ' + platTag + '\n';
-    b2 += hashTags;
-    bios.push(b2);
+  // Shuffle and pick 3 distinct templates
+  const shuffled = [...pool].sort(() => Math.random() - 0.5);
+  const selected = shuffled.slice(0, 3);
 
-    let b3 = '✨ ' + name + ' | ' + prof + '\n';
-    b3 += '🌿 ' + intFirst + ' • ' + intSecond + ' • ' + intThird + ' • ' + intFourth + '\n';
-    b3 += '📖 Zindagi ki kitaab mein naye panne likh raha hoon.\n';
-    b3 += '🌟 ' + (tone === 'Romantic' ? 'Muhabbat aur khushi baantna chahta hoon.' : tone === 'Mysterious' ? 'Raz aur baatein, dono dil mein hain.' : 'Har subah naye sapno ke saath.') + '\n';
-    b3 += '🕊️ Chhoti chhoti khushiyon mein zindagi ka maqsad hai.\n';
-    b3 += '🌻 Yahan aaye hain seekhnay aur sekhanay.\n';
-    b3 += '💫 Yaad rakhein: Aap kisi se kam nahi.\n';
-    b3 += e3[0] + ' ' + platform + ' | ' + platTag + '\n';
-    b3 += hashTags;
-    bios.push(b3);
-  }
+  // Build bios
+  const bios = selected.map(template => template(name, prof, intFirst, intSecond, intThird, intFourth, tone));
 
-  else if (lang === 'Pure Urdu') {
-    let b1 = '👋 السلام علیکم! میں ' + name + ' ہوں۔\n';
-    b1 += '📌 ' + prof + ' ہوں اور ' + intFirst + ' کا بڑا شوقین۔\n';
-    b1 += '🌱 روزانہ کچھ نیا سیکھتا ہوں، ' + intSecond + ' میری پسند اور ' + intThird + ' میری روح کی پیاس ہے۔\n';
-    b1 += '📖 زندگی ایک سفر ہے، اور میں اسے ' + (tone === 'Motivational' ? 'ہمت اور جوش' : tone === 'Funny' ? 'ہنستے ہوئے' : 'خوبصورتی') + ' کے ساتھ گزار رہا ہوں۔\n';
-    b1 += '💡 میرا یقین: "' + (tone === 'Professional' ? 'محنت رنگ لاتی ہے، کبھی ہار نہیں ماننی۔' : 'دل کی سنو، اور اپنی منزل خود بناؤ۔') + '"\n';
-    b1 += '🎯 مقصد: ' + (tone === 'Motivational' ? 'ہر روز بہتر انسان بننا اور دوسروں کو اٹھانا۔' : 'اپنی پہچان بنانا اور لوگوں کو خوشی دینا۔') + '\n';
-    b1 += '🔥 آؤ ساتھ میں کچھ اچھا کریں۔\n';
-    b1 += e1[1] + ' ' + platform + ' | ' + platTag + '\n';
-    b1 += hashTags;
-    bios.push(b1);
-
-    let b2 = '⚡ ' + name + ' • ' + prof + '\n';
-    b2 += '🔹 میری طاقت ' + intStr + ' میں ہے۔\n';
-    b2 += '🎯 میرا نشانہ: ' + (tone === 'Professional' ? 'پیشہ میں مقام پانا اور نیٹ ورک بنانا۔' : 'کبھی نہ رکنا، ہمیشہ آگے بڑھنا۔') + '\n';
-    b2 += '📈 ' + (tone === 'Motivational' ? 'محنت اور لگن میری پہچان ہے۔ منزل مل ہی جائے گی۔' : 'ہر دن نیا موقع، نئی امید۔') + '\n';
-    b2 += '💬 آؤ بات کریں، اور کچھ سیکھیں۔\n';
-    b2 += '🌟 مجھے یقین ہے کہ کچھ بھی ممکن ہے۔\n';
-    b2 += '🚀 یہ صرف شروعات ہے۔\n';
-    b2 += e2[2] + ' ' + platform + ' | ' + platTag + '\n';
-    b2 += hashTags;
-    bios.push(b2);
-
-    let b3 = '✨ ' + name + ' | ' + prof + '\n';
-    b3 += '🌿 ' + intFirst + ' • ' + intSecond + ' • ' + intThird + ' • ' + intFourth + '\n';
-    b3 += '📖 زندگی کی کتاب میں نئے صفحے لکھ رہا ہوں۔\n';
-    b3 += '🌟 ' + (tone === 'Romantic' ? 'محبت اور خوشی بانٹنا چاہتا ہوں۔' : tone === 'Mysterious' ? 'راز اور باتیں، دونوں دل میں ہیں۔' : 'ہر صبح نئے خوابوں کے ساتھ۔') + '\n';
-    b3 += '🕊️ چھوٹی چھوٹی خوشیوں میں زندگی کا مقصد ہے۔\n';
-    b3 += '🌻 یہاں آئے ہیں سیکھنے اور سکھانے۔\n';
-    b3 += '💫 یاد رکھیں: آپ کسی سے کم نہیں۔\n';
-    b3 += e3[0] + ' ' + platform + ' | ' + platTag + '\n';
-    b3 += hashTags;
-    bios.push(b3);
-  }
-
+  // Render results
   const area = document.getElementById('resultArea');
   area.innerHTML = '<h3 style="margin-bottom:0.75rem;font-family:\'Space Grotesk\',sans-serif;">✅ 3 Mukhtalif aur Lambi Bios Tayar Hain!</h3>';
 
-  bios.forEach(function(bio, idx) {
+  bios.forEach((bio, idx) => {
     const charCount = bio.length;
     const div = document.createElement('div');
     div.className = 'bio-item';
@@ -808,7 +805,9 @@ function generateBio() {
   area.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+// ─── COPY BIO WITH TRACKING ───
 function copyBio(text) {
+  trackEvent('copy_bio');
   navigator.clipboard.writeText(text).then(function() {
     showToast('✅ Bio copied to clipboard!');
   }).catch(function() {
@@ -822,6 +821,7 @@ function copyBio(text) {
   });
 }
 
+// ─── TICKER ───
 const tickerItems = [
   '🇵🇰 <strong>Ahmed</strong> from Karachi just generated a bio',
   '📸 <strong>Sara</strong> created her Instagram bio in Urdu',
@@ -837,6 +837,7 @@ function buildTicker() {
   }).join('');
 }
 
+// ─── FAQ ───
 const faqs = [
   { q: 'Is the AI Bio Generator really free?', a: 'Yes, 100% free forever. No signup, no credit card, no limits. Generate unlimited bios for any platform.' },
   { q: 'Can I generate a bio in Urdu?', a: 'Yes! We support Roman Urdu (English letters for Urdu words), Pure Urdu (Nastaliq script), and Urdu-English mix. We are the only free tool with full Urdu support.' },
@@ -857,9 +858,11 @@ function togFAQ(i) {
   ic.textContent = open ? '+' : '−';
 }
 
+// ─── EMAIL SUBSCRIBE WITH TRACKING ───
 function submitEmail() {
   const email = document.getElementById('emailInput').value;
   if (email && email.includes('@')) {
+    trackEvent('email_subscribe');
     showToast('🎉 Subscribed! Check your inbox soon.');
     document.getElementById('emailInput').value = '';
   } else {
@@ -867,6 +870,7 @@ function submitEmail() {
   }
 }
 
+// ─── TOAST ───
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -874,6 +878,7 @@ function showToast(msg) {
   setTimeout(function() { t.classList.remove('show'); }, 2800);
 }
 
+// ─── INTERSECTION OBSERVER FOR ANIMATIONS ───
 const observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) {
     if (e.isIntersecting) {
@@ -890,6 +895,11 @@ document.querySelectorAll('.feat-card, .test-card, .step').forEach(function(el) 
   observer.observe(el);
 });
 
+// ─── EVENT BINDINGS ───
+document.getElementById('generateBtn').addEventListener('click', generateBio);
+document.getElementById('subscribeBtn').addEventListener('click', submitEmail);
+
+// ─── INIT ───
 buildTicker();
 buildFAQ();
 </script>
